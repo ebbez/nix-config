@@ -17,7 +17,12 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
+    thunderbird
+    keepassxc
+    kitty
+    vesktop
+    restic
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -36,10 +41,12 @@
     # '')
   ];
 
+  programs.librewolf.enable = true;
+
   programs.git = {
     enable = true;
     userName = "Ebbez";
-    userEmail = "ebbez@noreply.github.com";
+    userEmail = "7920708+ebbez@users.noreply.github.com";
   };
 
   programs.neovim.enable = true;
