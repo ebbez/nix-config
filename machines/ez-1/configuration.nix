@@ -8,7 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      <home-manager/nixos>
     ];
 
   # Bootloader.
@@ -96,6 +95,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    git
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -114,6 +114,10 @@
     dataDir = "/home/ebbe/";
     configDir = "/home/ebbe/.config/syncthing";
   };
+
+  services.foldingathome.enable = true;
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
