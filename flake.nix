@@ -22,12 +22,12 @@
     nixosConfigurations.ez-1 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./machines/ez-1/configuration.nix
+        ./machines/ez-1
 	home-manager.nixosModules.home-manager
 	{
 	  home-manager.useGlobalPkgs = true;
 	  home-manager.useUserPackages = true;
-	  home-manager.users.ebbe = import ./home/default.nix;
+	  home-manager.users.ebbe = import ./home;
 	}
       ];
     };
@@ -35,12 +35,12 @@
     nixosConfigurations.ez-2 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-	./machines/ez-2/configuration.nix
+	./machines/ez-2
 	home-manager.nixosModules.home-manager
 	{
 	  home-manager.useGlobalPkgs = true;
 	  home-manager.useUserPackages = true;
-	  home-manager.users.ebbe = import ./home/default.nix;
+	  home-manager.users.ebbe = import ./home;
 	}
       ];
     };
