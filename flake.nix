@@ -36,6 +36,12 @@
       system = "x86_64-linux";
       modules = [
 	./machines/ez-2/configuration.nix
+	home-manager.nixosModules.home-manager
+	{
+	  home-manager.useGlobalPkgs = true;
+	  home-manager.useUserPackages = true;
+	  home-manager.users.ebbe = import ./home/default.nix;
+	}
       ];
     };
 
