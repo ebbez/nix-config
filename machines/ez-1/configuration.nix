@@ -11,7 +11,7 @@
       ../../modules/personal-computer.nix
     ];
 
-  networking.hostName = "ez-1"
+  networking.hostName = "ez-1";
 
   system.stateVersion = "24.05"; 
 }
