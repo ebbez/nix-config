@@ -15,6 +15,7 @@
     kitty
     vesktop
     restic
+    libreoffice
   ];
 
   programs.plasma = {

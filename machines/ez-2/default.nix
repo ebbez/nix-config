@@ -11,6 +11,9 @@
       ../../modules/personal-computer.nix
     ];
 
+  systemd.tpm2.enable = true;
+  boot.initrd.systemd.tpm2.enable = true;
+
   networking.hostName = "ez-2";
 
   system.stateVersion = "24.05"; 
