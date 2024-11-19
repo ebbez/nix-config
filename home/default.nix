@@ -17,6 +17,16 @@
     restic
   ];
 
+  programs.plasma = {
+    enable = true;
+
+    workspace = {
+      lookAndFeel = "org.kde.breezedark.desktop";
+      wallpaperPictureOfTheDay.provider = "apod";
+      wallpaperFillMode = "preserveAspectCrop";
+    };
+  };
+
   programs.librewolf.enable = true;
 
   programs.git = {
