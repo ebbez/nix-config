@@ -13,8 +13,6 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  networking.hostName = "ez-1"; # Define your hostname.
-
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/13ac1cd2-d038-48aa-bf25-a8bff38e9522";
       fsType = "btrfs";
