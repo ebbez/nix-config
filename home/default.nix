@@ -15,6 +15,7 @@
     kitty
     vesktop
     restic
+    spotify
     libreoffice
   ];
 
@@ -23,20 +24,29 @@
 
     workspace = {
       lookAndFeel = "org.kde.breezedark.desktop";
+      theme = "Breeze-Dark";
       wallpaperPictureOfTheDay.provider = "apod";
       wallpaperFillMode = "preserveAspectCrop";
     };
   };
 
-  #gtk {
-  #  enable = true;
-  #  theme = {
-  #    name = "Breeze-Dark";
-  #    package = pkgs.libsForQt5.breeze-gtk;
-  #  };
-  #};
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Breeze-Dark";
+      package = pkgs.kdePackages.breeze-gtk;
+    };
+  };
 
-  programs.librewolf.enable = true;
+  programs.librewolf = {
+    enable = true;
+    settings = {
+      "privacy.clearOnShutdown.history" = false;
+      "privacy.clearOnShutdown.downloads" = false;
+      "middlemouse.paste" = false;
+      "general.autoScroll" = true;
+    };
+  };
 
   programs.git = {
     enable = true;

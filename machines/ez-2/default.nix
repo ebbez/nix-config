@@ -11,6 +11,9 @@
       ../../modules/personal-computer.nix
     ];
 
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
   systemd.tpm2.enable = true;
   boot.initrd.systemd.tpm2.enable = true;
 
