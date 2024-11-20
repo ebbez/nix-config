@@ -17,7 +17,7 @@
     restic
     spotify
     libreoffice
-    kdePackages.fileflight
+    kdePackages.filelight
   ];
 
   programs.plasma = {
