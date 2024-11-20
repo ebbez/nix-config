@@ -55,7 +55,7 @@
     userEmail = "7920708+ebbez@users.noreply.github.com";
     extraConfig = {
       push.autoSetupRemote = true;
-    }
+    };
   };
 
   programs.neovim.enable = true;
