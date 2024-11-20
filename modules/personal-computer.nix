@@ -70,6 +70,9 @@
     git
     steam
     xemu
+    sbctl
+    flutter
+    android-studio
   ];
 
   # List services
