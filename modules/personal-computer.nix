@@ -36,9 +36,9 @@
   services.desktopManager.plasma6.enable = true;
 
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
-      kate
-      konsole
-      kwallet
+    kate
+    konsole
+    kwallet
   ];
 
   # Enable CUPS to print documents.
