@@ -53,7 +53,9 @@
     enable = true;
     userName = "Ebbez";
     userEmail = "7920708+ebbez@users.noreply.github.com";
-    push.autoSetupRemote = true;
+    extraConfig = {
+      push.autoSetupRemote = true;
+    }
   };
 
   programs.neovim.enable = true;
