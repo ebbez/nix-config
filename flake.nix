@@ -16,6 +16,11 @@
       inputs.home-manager.follows = "home-manager";
     };
 
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs = { 
@@ -23,6 +28,7 @@
     nixpkgs, 
     home-manager,
     plasma-manager,
+    lanzaboote,
     ...
     } @ inputs: {
     
@@ -44,6 +50,7 @@
       system = "x86_64-linux";
       modules = [
 	./machines/ez-2
+	lanzaboote.nixosModules.lanzaboote
 	home-manager.nixosModules.home-manager
 	{
 	  home-manager.useGlobalPkgs = true;
