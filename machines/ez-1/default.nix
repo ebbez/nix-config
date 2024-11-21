@@ -8,8 +8,10 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../../modules/personal-computer.nix
+      ../../modules/pc
     ];
+
+  boot.loader.systemd-boot.enable = true;
 
   networking.hostName = "ez-1";
 

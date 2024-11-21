@@ -17,7 +17,7 @@
     restic
     spotify
     libreoffice
-    kdePackages.filelight
+    android-studio
   ];
 
   programs.plasma = {
@@ -30,14 +30,6 @@
       wallpaperFillMode = "preserveAspectCrop";
     };
   };
-
-  #gtk = {
-  #  enable = true;
-  #  theme = {
-  #    name = "Breeze-Dark";
-  #    package = pkgs.kdePackages.breeze-gtk;
-  #  };
-  #};
 
   programs.librewolf = {
     enable = true;
