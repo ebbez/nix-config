@@ -8,16 +8,18 @@
   };
 
   outputs = { self, nixpkgs, home-manager }: {
+    nixpkgs.config.allowUnfree = true;
+
     nixosConfigurations = {
       "ez-2" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ 
-	  ./hosts/ez-2/configuration.nix 
+	  ./hosts/ez-2
 	  home-manager.nixosModules.home-manager
           {
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
-            home-manager.users.ebbe = import ./user/home.nix;
+            home-manager.users.ebbe = import ./home;
 	  }
 	];
       };
