@@ -3,11 +3,15 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    lanzaboote.url = "github:nix-community/lanzaboote/v0.4.2";
+    lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager }: {
+  outputs = { self, nixpkgs, home-manager, lanzaboote }: {
     nixpkgs.config.allowUnfree = true;
 
     homeConfigurations = {
@@ -23,13 +27,6 @@
         system = "x86_64-linux";
 	modules = [
 	  ./hosts/ez-1
-
-#	  home-manager.nixosModules.home-manager
-#	  {
-#           home-manager.useGlobalPkgs = true;
-#	    home-manager.useUserPackages = true;
-#	    home-manager.users.ebbe = import ./home;
-#	  }
 	];
       };
 
@@ -37,13 +34,9 @@
         system = "x86_64-linux";
         modules = [ 
 	  ./hosts/ez-2
-
-#	  home-manager.nixosModules.home-manager
-#         {
-#	    home-manager.useGlobalPkgs = true;
-#	    home-manager.useUserPackages = true;
-#           home-manager.users.ebbe = import ./home;
-#	  }
+	  lanzaboote.nixosModules.lanzaboote
+	  ./modules/secureboot.nix
+	  ./modules/tpm-unlock.nix
 	];
       };
 
