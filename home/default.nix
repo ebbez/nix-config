@@ -4,9 +4,6 @@
 
   imports = [
     ./applications/git.nix
-#    ./applications/web.nix
-#    ./applications/personal-admin.nix
-#    ./applications/sync.nix
   ];
 
   home.packages = with pkgs; [
@@ -14,6 +11,9 @@
     kitty
     keepassxc
     brave
+    discord
+    thunderbird
+    vscodium
   ];
 
   services.syncthing.enable = true;

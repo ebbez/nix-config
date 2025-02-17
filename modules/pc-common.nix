@@ -21,8 +21,6 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -33,6 +31,8 @@
     # use the example session manager
     #media-session.enable = true;
   };
+  security.rtkit.enable = true;
+  services.pulseaudio.enable = false;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ebbe = {
