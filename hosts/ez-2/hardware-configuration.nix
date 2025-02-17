@@ -5,23 +5,24 @@
 
 {
   imports =
-    [ (modulesPath + "/profiles/qemu-guest.nix")
+    [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "ahci" "xhci_pci" "virtio_pci" "sr_mod" "virtio_blk" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "sd_mod" "sdhci_pci" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/6646d42e-d6c6-400e-9118-488a7910be10";
-      fsType = "ext4";
+    { device = "/dev/disk/by-uuid/c2530f27-c885-48b4-9acf-2bb642cad936";
+      fsType = "btrfs";
+      options = [ "subvol=@" ];
     };
 
-  boot.initrd.luks.devices."luks-83a76b15-61da-42a0-9d3a-66a1e99bedd2".device = "/dev/disk/by-uuid/83a76b15-61da-42a0-9d3a-66a1e99bedd2";
+  boot.initrd.luks.devices."luks-4b05f731-adb8-4bc7-9fc4-7a1db93bd3f3".device = "/dev/disk/by-uuid/4b05f731-adb8-4bc7-9fc4-7a1db93bd3f3";
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/3986-B5C6";
+    { device = "/dev/disk/by-uuid/83D2-09B1";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
@@ -33,7 +34,8 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp1s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp2s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

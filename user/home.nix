@@ -9,6 +9,8 @@
     brave
   ];
 
+  services.syncthing.enable = true;
+
   programs.git.enable = true;
   programs.git = {
     userName = "Ebbez";
