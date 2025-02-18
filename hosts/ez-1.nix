@@ -2,19 +2,21 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, libs, modulesPath, ... }:
 
 {
-  imports =
-    [ 
-      ../../modules/pc-common.nix
-      ../../modules/locale.nix
+  networking.hostName = "ez-1"; # Define your hostname.
 
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+  imports =
+    [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  networking.hostName = "ez-2"; # Define your hostname.
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "sd_mod" "sdhci_pci" ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-amd" ];
+  boot.extraModulePackages = [ ];
+
+  #TBD
 
   system.stateVersion = "24.11"; # Don't touch this (This option is for comparing changes in defaults of apps at the release of this NixOS version).
 }

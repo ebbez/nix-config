@@ -11,7 +11,7 @@
     lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, lanzaboote }: {
+  outputs = { self, nixpkgs, home-manager, lanzaboote }@attrs: {
     nixpkgs.config.allowUnfree = true;
 
     homeConfigurations = {
@@ -25,15 +25,23 @@
       
       "ez-1" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+	specialArgs = attrs;
         modules = [
-          ./hosts/ez-1
+          ./hosts/ez-1.nix
+	  ./modules/pc-common.nix
+	  ./modules/nl-locale.nix
+          #./modules/secureboot.nix
+	  #./modules/tpm-unlock.nix
         ];
       };
 
       "ez-2" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+	specialArgs = attrs;
         modules = [ 
-          ./hosts/ez-2
+          ./hosts/ez-2.nix
+	  ./modules/pc-common.nix
+	  ./modules/nl-locale.nix
           ./modules/secureboot.nix
 	  ./modules/tpm-unlock.nix
         ];
