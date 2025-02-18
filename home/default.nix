@@ -4,10 +4,10 @@
 
   imports = [
     ./applications/git.nix
+    ./applications/neovim.nix
   ];
 
   home.packages = with pkgs; [
-    neovim
     kitty
     keepassxc
     brave

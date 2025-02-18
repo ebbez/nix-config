@@ -25,25 +25,25 @@
       
       "ez-1" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-	specialArgs = attrs;
+        specialArgs = attrs;
         modules = [
           ./hosts/ez-1.nix
-	  ./modules/pc-common.nix
-	  ./modules/nl-locale.nix
+          ./modules/pc-common.nix
+          ./modules/nl-locale.nix
           #./modules/secureboot.nix
-	  #./modules/tpm-unlock.nix
+          #./modules/tpm-unlock.nix
         ];
       };
 
       "ez-2" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-	specialArgs = attrs;
+        specialArgs = attrs;
         modules = [ 
           ./hosts/ez-2.nix
-	  ./modules/pc-common.nix
-	  ./modules/nl-locale.nix
+          ./modules/pc-common.nix
+          ./modules/nl-locale.nix
           ./modules/secureboot.nix
-	  ./modules/tpm-unlock.nix
+          ./modules/tpm-unlock.nix
         ];
       };
 
