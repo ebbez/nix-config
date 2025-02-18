@@ -17,7 +17,7 @@
     homeConfigurations = {
       "ebbe" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = "x86_64-linux"; config = { allowUnfree = true; }; };
-	modules = [ ./home ];
+        modules = [ ./home ];
       };
     };
 
@@ -25,19 +25,18 @@
       
       "ez-1" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-	modules = [
-	  ./hosts/ez-1
-	];
+        modules = [
+          ./hosts/ez-1
+        ];
       };
 
       "ez-2" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ 
-	  ./hosts/ez-2
-	  lanzaboote.nixosModules.lanzaboote
-	  ./modules/secureboot.nix
+          ./hosts/ez-2
+          ./modules/secureboot.nix
 	  ./modules/tpm-unlock.nix
-	];
+        ];
       };
 
     };
