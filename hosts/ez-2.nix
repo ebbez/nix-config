@@ -22,6 +22,36 @@
       options = [ "subvol=@" ];
     };
 
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/c2530f27-c885-48b4-9acf-2bb642cad936";
+      fsType = "btrfs";
+      options = [ "subvol=@home" ];
+    };
+
+  fileSystems."/nix" =
+    { device = "/dev/disk/by-uuid/c2530f27-c885-48b4-9acf-2bb642cad936";
+      fsType = "btrfs";
+      options = [ "subvol=@nix" ];
+    };
+
+  fileSystems."/var/log" =
+    { device = "/dev/disk/by-uuid/c2530f27-c885-48b4-9acf-2bb642cad936";
+      fsType = "btrfs";
+      options = [ "subvol=@log" ];
+    };
+
+  fileSystems."/var/tmp" =
+    { device = "/dev/disk/by-uuid/c2530f27-c885-48b4-9acf-2bb642cad936";
+      fsType = "btrfs";
+      options = [ "subvol=@tmp" ];
+    };
+
+  fileSystems."/swap" =
+    { device = "/dev/disk/by-uuid/c2530f27-c885-48b4-9acf-2bb642cad936";
+      fsType = "btrfs";
+      options = [ "subvol=@swap" ];
+    };
+
   boot.initrd.luks.devices."luks-4b05f731-adb8-4bc7-9fc4-7a1db93bd3f3".device = "/dev/disk/by-uuid/4b05f731-adb8-4bc7-9fc4-7a1db93bd3f3";
 
   fileSystems."/boot" =
