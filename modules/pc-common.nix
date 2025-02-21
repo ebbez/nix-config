@@ -45,6 +45,8 @@
     neovim
   ];
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 }
