@@ -14,6 +14,7 @@
     discord
     thunderbird
     vscodium
+    libreoffice-qt6-fresh
   ];
 
   services.syncthing.enable = true;
