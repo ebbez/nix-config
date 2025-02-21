@@ -27,14 +27,17 @@
     nixosConfigurations = {
       
       "ez-1" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        pkgs = import nixpkgs { 
+          system = "x86_64-linux"; 
+          config.allowUnfree = true; 
+        };
         specialArgs = attrs;
         modules = [
           ./hosts/ez-1.nix
           ./modules/pc-common.nix
           ./modules/nl-locale.nix
-          #./modules/secureboot.nix
-          #./modules/tpm-unlock.nix
+          ./modules/secureboot.nix
+          ./modules/tpm-unlock.nix
           ./modules/gaming.nix
         ];
       };

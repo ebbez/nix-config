@@ -5,10 +5,6 @@
     lanzaboote.nixosModules.lanzaboote
   ];
 
-  environment.systemPackages = with pkgs; [
-    sbctl
-  ];
-
   boot.lanzaboote = {
     enable = true;
     pkiBundle = "/var/lib/sbctl";

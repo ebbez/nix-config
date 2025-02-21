@@ -8,7 +8,7 @@
   ];
 
   home.packages = with pkgs; [
-    kitty
+    kdePackages.konsole
     keepassxc
     brave
     discord
