@@ -5,7 +5,6 @@
   home.packages = with pkgs; [
     kdePackages.konsole
     kdePackages.kcalc
-    kdePackages.konqueror
     keepassxc
     brave
     discord
