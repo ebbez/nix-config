@@ -30,6 +30,11 @@
     enable = true;
     userName = "Ebbez";
     userEmail = "7920708+ebbez@users.noreply.github.com";
+    extraConfig = {
+      "push" = {
+        "autoSetupRemote" = "true";
+      };
+    };
   };
 
   # Let home-manager manage & update itself
