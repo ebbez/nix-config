@@ -4,13 +4,13 @@
 
   home.packages = with pkgs; [
     kdePackages.konsole
+    kdePackages.konqueror
     keepassxc
     brave
     discord
     thunderbird
     vscodium
     libreoffice-qt6-fresh
-    onlyoffice-desktopeditors
   ];
 
   services.syncthing.enable = true;
