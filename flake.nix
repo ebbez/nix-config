@@ -14,15 +14,6 @@
   };
 
   outputs = { self, nixpkgs, home-manager, lanzaboote }@attrs: {
-    homeConfigurations = {
-      "ebbe" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {
-          system = "x86_64-linux";
-          config.allowUnfree = true;
-        };
-        modules = [ ./home ];
-      };
-    };
 
     nixosConfigurations = {
       
@@ -39,6 +30,12 @@
           ./modules/secureboot.nix
           ./modules/tpm-unlock.nix
           ./modules/gaming.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.ebbe = import ./home.nix;
+          }
         ];
       };
 
@@ -54,6 +51,11 @@
           ./modules/nl-locale.nix
           ./modules/secureboot.nix
           ./modules/tpm-unlock.nix
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.ebbe = import ./home.nix;
+          }
         ];
       };
 
