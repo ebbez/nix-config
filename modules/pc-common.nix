@@ -52,11 +52,19 @@
   security.rtkit.enable = true;
   services.pulseaudio.enable = false;
 
+  services.flatpak.enable = true; 
+
+  # Docker
+  virtualisation.docker = {
+    enable = true;
+    storageDriver = "btrfs";
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ebbe = {
     isNormalUser = true;
     description = "Ebbe";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
   environment.systemPackages = with pkgs; [

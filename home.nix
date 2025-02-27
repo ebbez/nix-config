@@ -3,7 +3,6 @@
   home.homeDirectory = "/home/ebbe";
 
   home.packages = with pkgs; [
-    kdePackages.konsole
     kdePackages.kcalc
     keepassxc
     brave
@@ -11,6 +10,7 @@
     thunderbird
     vscodium
     libreoffice-qt6-fresh
+    yt-dlp
   ];
 
   services.syncthing.enable = true;
