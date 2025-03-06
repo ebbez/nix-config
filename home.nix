@@ -11,6 +11,10 @@
     vscodium
     libreoffice-qt6-fresh
     yt-dlp
+
+    jetbrains.phpstorm
+    php
+    php84Packages.composer
   ];
 
   services.syncthing.enable = true;
