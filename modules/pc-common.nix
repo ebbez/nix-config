@@ -34,7 +34,6 @@
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
-  services.ddccontrol.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -71,6 +70,7 @@
   environment.systemPackages = with pkgs; [
     sbctl
     neovim
+    ddcutil
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

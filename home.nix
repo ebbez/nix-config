@@ -10,6 +10,7 @@
     thunderbird
     vscodium
     libreoffice-qt6-fresh
+    radicale
     yt-dlp
 
     jetbrains.phpstorm
@@ -38,6 +39,22 @@
       "push" = {
         "autoSetupRemote" = "true";
       };
+    };
+  };
+
+  systemd.user.services.radicale = {
+    Unit = {
+      Description = "A simple CalDAV (calendar) and CardDAV (contact) server";
+    };
+
+    Service = {
+      WorkingDirectory = "/home/ebbe/Documents/Sync/CalDAV en CardDAV";
+      ExecStart = "/usr/bin/env radicale --config=radicale.ini";
+      Restart = "on-failure";
+    };
+
+    Install = {
+      WantedBy = [ "default.target" ];
     };
   };
 
