@@ -70,7 +70,6 @@
   environment.systemPackages = with pkgs; [
     sbctl
     neovim
-    ddcutil
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
