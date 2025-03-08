@@ -11,9 +11,11 @@
     # Automatic EFI signing and boot managing
     lanzaboote.url = "github:nix-community/lanzaboote/v0.4.2";
     lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.6.0";
   };
 
-  outputs = { self, nixpkgs, home-manager, lanzaboote }@attrs: {
+  outputs = { self, nixpkgs, home-manager, lanzaboote, nix-flatpak }@attrs: {
 
     nixosConfigurations = {
       
@@ -33,6 +35,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = attrs;
             home-manager.users.ebbe = import ./home.nix;
           }
         ];

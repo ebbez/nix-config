@@ -52,8 +52,6 @@
   security.rtkit.enable = true;
   services.pulseaudio.enable = false;
 
-  services.flatpak.enable = true; 
-
   # Docker
   virtualisation.docker = {
     enable = true;

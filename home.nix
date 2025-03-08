@@ -1,12 +1,15 @@
-{ pkgs, ... }: {
+{ pkgs, nix-flatpak, ... }: {
   home.username = "ebbe";
   home.homeDirectory = "/home/ebbe";
+
+  imports = [
+    nix-flatpak.homeManagerModules.nix-flatpak
+  ];
 
   home.packages = with pkgs; [
     kdePackages.kcalc
     keepassxc
     brave
-    discord
     thunderbird
     vscodium
     libreoffice-qt6-fresh
@@ -14,9 +17,16 @@
     yt-dlp
 
     jetbrains.phpstorm
-    php
+    php84
     php84Packages.composer
   ];
+
+  services.flatpak = {
+    enable = true;
+    packages = [
+      "com.discordapp.Discord"
+    ];
+  };
 
   services.syncthing.enable = true;
 
