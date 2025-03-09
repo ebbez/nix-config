@@ -15,6 +15,7 @@
     libreoffice-qt6-fresh
     radicale
     yt-dlp
+    vlc
 
     jetbrains.phpstorm
     php84
@@ -22,7 +23,6 @@
   ];
 
   services.flatpak = {
-    enable = true;
     packages = [
       "com.discordapp.Discord"
     ];
