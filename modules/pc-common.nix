@@ -52,6 +52,9 @@
   security.rtkit.enable = true;
   services.pulseaudio.enable = false;
 
+  # Flatpak with declarative config in ./home.nix (uses nix-flatpak)
+  services.flatpak.enable = true;
+
   # Docker
   virtualisation.docker = {
     enable = true;
@@ -69,8 +72,6 @@
     sbctl
     neovim
   ];
-
-  services.flatpak.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
