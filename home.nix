@@ -8,6 +8,7 @@
 
   home.packages = with pkgs; [
     kdePackages.kcalc
+    kdePackages.krecorder
     keepassxc
     brave
     thunderbird
@@ -16,6 +17,7 @@
     radicale
     yt-dlp
     vlc
+    unzip
 
     jetbrains.phpstorm
     php84
