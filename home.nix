@@ -54,6 +54,8 @@
     };
   };
 
+  programs.gpg.enable = true;
+
   # Radicale Calendar and contact server service for local serving from user account & user Syncthing folder
   systemd.user.services.radicale = {
     Unit = {

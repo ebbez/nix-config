@@ -56,6 +56,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = attrs;
             home-manager.users.ebbe = import ./home.nix;
           }
         ];
