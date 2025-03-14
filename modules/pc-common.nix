@@ -70,6 +70,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    kdePackages.partitionmanager
     sbctl
     neovim
   ];

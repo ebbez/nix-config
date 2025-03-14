@@ -9,6 +9,7 @@
   home.packages = with pkgs; [
     kdePackages.kcalc
     kdePackages.krecorder
+
     keepassxc
     brave
     thunderbird
