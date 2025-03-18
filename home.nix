@@ -15,6 +15,7 @@
     thunderbird
     vscodium
     libreoffice-qt6-fresh
+    restic
     radicale
     yt-dlp
     vlc
