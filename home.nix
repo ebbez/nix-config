@@ -9,6 +9,7 @@
   home.packages = with pkgs; [
     kdePackages.kcalc
     kdePackages.krecorder
+    kdePackages.isoimagewriter
 
     keepassxc
     brave
@@ -24,11 +25,14 @@
     jetbrains.phpstorm
     php84
     php84Packages.composer
+
+    ocrmypdf
   ];
 
   services.flatpak = {
     packages = [
       "com.discordapp.Discord"
+      "com.spotify.Client"
     ];
   };
 

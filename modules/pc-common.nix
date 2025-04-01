@@ -62,6 +62,10 @@
     storageDriver = "btrfs";
   };
 
+  # QEMU/KVM
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ebbe = {
     isNormalUser = true;
@@ -74,9 +78,6 @@
     sbctl
     neovim
   ];
-
-  virtualisation.waydroid.enable = true;
-
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
