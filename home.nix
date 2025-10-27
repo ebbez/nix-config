@@ -51,13 +51,15 @@
 
   programs.git = {
     enable = true;
-    userName = "Ebbez";
-    userEmail = "7920708+ebbez@users.noreply.github.com";
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Ebbez";
+        email = "7920708+ebbez@users.noreply.github.com";
+      };
       "push" = {
         "autoSetupRemote" = "true";
       };
-    };
+    };    
   };
 
   programs.gpg.enable = true;
