@@ -1,6 +1,12 @@
 { pkgs, nix-flatpak, ... }: {
   home.username = "ebbe";
   home.homeDirectory = "/home/ebbe";
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      vim = "nvim";
+    };
+  };
 
   imports = [
     nix-flatpak.homeManagerModules.nix-flatpak
@@ -65,21 +71,21 @@
   programs.gpg.enable = true;
 
   # Radicale Calendar and contact server service for local serving from user account & user Syncthing folder
-  systemd.user.services.radicale = {
-    Unit = {
-      Description = "A simple CalDAV (calendar) and CardDAV (contact) server";
-    };
+  # systemd.user.services.radicale = {
+  #   Unit = {
+  #     Description = "A simple CalDAV (calendar) and CardDAV (contact) server";
+  #   };
 
-    Service = {
-      WorkingDirectory = "/home/ebbe/Documents/Sync/CalDAV en CardDAV";
-      ExecStart = "/usr/bin/env radicale --config=radicale.ini";
-      Restart = "on-failure";
-    };
+  #   Service = {
+  #     WorkingDirectory = "/home/ebbe/Documents/Sync/CalDAV en CardDAV";
+  #     ExecStart = "/usr/bin/env radicale --config=radicale.ini";
+  #     Restart = "on-failure";
+  #   };
 
-    Install = {
-      WantedBy = [ "default.target" ];
-    };
-  };
+  #   Install = {
+  #     WantedBy = [ "default.target" ];
+  #   };
+  # };
 
   # Let home-manager manage & update itself
   programs.home-manager.enable = true;
