@@ -16,6 +16,7 @@
     kdePackages.kcalc
     kdePackages.krecorder
     kdePackages.isoimagewriter
+    kdePackages.filelight
 
     keepassxc
     brave
