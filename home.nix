@@ -17,21 +17,25 @@
     kdePackages.krecorder
     kdePackages.isoimagewriter
     kdePackages.filelight
+    kdePackages.kamera
 
     keepassxc
     brave
     thunderbird
-    vscodium
     libreoffice-qt6-fresh
     restic
-    radicale
+    #radicale
     yt-dlp
     vlc
     unzip
 
+    vscodium
     jetbrains.phpstorm
     php84
     php84Packages.composer
+    rustc
+    cargo
+    go
 
     ocrmypdf
   ];

@@ -10,8 +10,6 @@
 
   networking.hostName = "ez-2";
 
-  services.fprintd.enable = true;
-
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "uas" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
