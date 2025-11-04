@@ -9,6 +9,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
 
@@ -30,10 +33,11 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
+  programs.hyprland.enable = true;
+
   hardware.i2c.enable = true; # for KDE monitor brightness control widget
   hardware.bluetooth.enable = true;
 
@@ -83,6 +87,8 @@
     kdePackages.partitionmanager
     sbctl
     neovim
+    kitty
+    wofi
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

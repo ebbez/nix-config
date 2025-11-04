@@ -10,7 +10,7 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.6.0";
 
     # Automatic EFI signing and boot managing
-    lanzaboote.url = "github:nix-community/lanzaboote/v0.4.2";
+    lanzaboote.url = "github:nix-community/lanzaboote/v0.4.3";
     lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
 
   };

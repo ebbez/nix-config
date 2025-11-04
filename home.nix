@@ -17,7 +17,7 @@
     kdePackages.krecorder
     kdePackages.isoimagewriter
     kdePackages.filelight
-    kdePackages.kamera
+    kdePackages.kamoso
 
     keepassxc
     brave
