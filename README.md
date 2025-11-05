@@ -44,12 +44,13 @@ Use `fdisk` or follow commands below
 # mkfs.fat -F32 /dev/nvme0n1p1
 # cryptsetup luksFormat /dev/nvme0n1p2
 # <ENTER PASSWORD> REMEMBER!
+# cryptsetup open /dev/nvme0n1p2 root
+# mkfs.btrfs /dev/mapper/root
 ```
 
 ### 3. Mount partitions, create subvolumes & mount subvolumes
 
 ```
-# cryptsetup open /dev/nvme0n1p2 root
 # mount /dev/mapper/root /mnt
 # cd /mnt
 # btrfs subvolume create /mnt/@
