@@ -91,6 +91,10 @@
     wofi
   ];
 
+  fonts.packages = with pkgs; [
+    corefonts
+  ];
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Enable the OpenSSH daemon.
