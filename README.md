@@ -100,6 +100,19 @@ Add `networking.hostname = "ez-X";` to the beginning of the ez-X.nix file.
 
 ```
 # nixos-install --flake .#ez-X # replace ez-X with the identifier of the machine you are installing NixOS to
+# nixos-enter --root /mnt -c 'passwd ebbe'
 ```
 
 You possibly might need to copy the nix-config repo to the mounted root partition. `cp . /mnt/etc/nixos` or `cp . /mnt/home/ebbe/` and then symlink it using `ln -s /home/ebbe/nix-config /etc/nixos`
+
+### 8. Restart and enable Secure Boot and TPM unlock
+
+After restarting, create keys for Secure Boot, enable Lanzaboote (`modules/secureboot.nix`) and TPM unlocking (`modules/tpm-unlock.nix`)
+
+```
+$ sudo sbctl status # Check whether Secure Boot is in Setup Mode
+$ sudo sbctl create-keys
+$ sudo sbctl enroll-keys -m -f # enroll own with Microsoft's keys and OEM keys (Framework)
+$ vim nix-config/flake.nix # uncomment Secure Boot & tpm-unlock
+$ systemd-cryptenroll --tpm2-device=auto /dev/nvme0n1p2 # enroll TPM key to LUKS container
+```
