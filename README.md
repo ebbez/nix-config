@@ -31,9 +31,9 @@ Use a terminal/minimal installation method.
 
 Use `fdisk` or follow commands below
 
-```bash
-# # 0: means 'default', so next partition number, first possible sector, last possible sector.
-# sgdisk --zap-all <DISK> # GPT
+```
+# # 0:0:0 means 'default', so next partition number:first available sector:last available sector.
+# sgdisk --zap-all <DISK> # Format partition table to GPT format 
 # sgdisk --new 0:0:+1G --typecode 0:ef00 <DISK> # 1GB EFI partition
 # sgdisk --new 0:0:0 <DISK> # Assigns rest disk space to the root/LUKS container partition
 ```
