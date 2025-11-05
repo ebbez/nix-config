@@ -47,6 +47,8 @@ Use `fdisk` or follow commands below
 ```
 
 ### 3. Mount partitions, create subvolumes & mount subvolumes
+
+```
 # cryptsetup open /dev/nvme0n1p2 root
 # mount /dev/mapper/root /mnt
 # cd /mnt
