@@ -23,10 +23,11 @@
     brave
     thunderbird
     libreoffice-qt6-fresh
+    vlc
+
     restic
     #radicale
     yt-dlp
-    vlc
     unzip
 
     vscodium
@@ -44,6 +45,7 @@
     packages = [
       "com.discordapp.Discord"
       "com.spotify.Client"
+      "com.rustdesk.RustDesk"
     ];
   };
 
@@ -52,12 +54,12 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-    extraConfig = ''
-      set expandtab
-      set smartindent
-      set tabstop=2
-      set shiftwidth=2
-    '';
+    # extraConfig = ''
+    #   set expandtab
+    #   set smartindent
+    #   set tabstop=2
+    #   set shiftwidth=2
+    # '';
   };
 
   programs.git = {
