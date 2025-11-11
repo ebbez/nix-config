@@ -24,6 +24,7 @@
     thunderbird
     libreoffice-qt6-fresh
     vlc
+    qbittorrent
 
     restic
     #radicale
@@ -37,6 +38,7 @@
     rustc
     cargo
     go
+    gcc
 
     ocrmypdf
   ];
