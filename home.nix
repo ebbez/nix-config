@@ -27,6 +27,7 @@
     qbittorrent
 
     restic
+    backrest
     #radicale
     yt-dlp
     unzip
