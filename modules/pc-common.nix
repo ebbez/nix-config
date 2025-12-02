@@ -36,6 +36,7 @@
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
+  services.desktopManager.cosmic.enable = true;
   programs.hyprland.enable = true;
 
   hardware.i2c.enable = true; # for KDE monitor brightness control widget
@@ -74,6 +75,7 @@
       swtpm.enable = true;
     };
   };
+  virtualisation.spiceUSBRedirection.enable = true;
   programs.virt-manager.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -89,6 +91,11 @@
     neovim
     kitty
     wofi
+
+    php84
+    php84Packages.composer
+
+    flutter
   ];
 
   fonts.packages = with pkgs; [

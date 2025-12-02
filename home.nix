@@ -25,6 +25,7 @@
     libreoffice-qt6-fresh
     vlc
     qbittorrent
+    nextcloud-client
 
     restic
     backrest
@@ -32,14 +33,21 @@
     yt-dlp
     unzip
 
+    gcc
+
     vscodium
+    android-studio
+
     jetbrains.phpstorm
-    php84
-    php84Packages.composer
+
+    jetbrains.pycharm-professional
+    python3
+    python3Packages.tkinter
+
     rustc
     cargo
+
     go
-    gcc
 
     ocrmypdf
   ];
