@@ -36,7 +36,6 @@
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
-  services.desktopManager.cosmic.enable = true;
   programs.hyprland.enable = true;
 
   hardware.i2c.enable = true; # for KDE monitor brightness control widget
