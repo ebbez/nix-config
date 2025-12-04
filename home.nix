@@ -41,8 +41,7 @@
     jetbrains.phpstorm
 
     jetbrains.pycharm-professional
-    python3
-    python3Packages.tkinter
+    (python3.withPackages (subpkgs: with subpkgs; [ tkinter ]))
 
     rustc
     cargo
