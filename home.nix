@@ -18,6 +18,7 @@
     kdePackages.isoimagewriter
     kdePackages.filelight
     kdePackages.kamoso
+    kdePackages.kleopatra
 
     keepassxc
     brave
@@ -26,6 +27,7 @@
     vlc
     qbittorrent
     nextcloud-client
+    element-desktop
 
     restic
     backrest
@@ -41,7 +43,7 @@
     jetbrains.phpstorm
 
     jetbrains.pycharm-professional
-    (python3.withPackages (subpkgs: with subpkgs; [ tkinter ]))
+    (python3.withPackages (subpkgs: with subpkgs; [ tkinter matplotlib ]))
 
     rustc
     cargo
